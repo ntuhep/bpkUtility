@@ -1,26 +1,26 @@
 Int_t   Size;
 Int_t   Index                   [MAX_JETS] ;
 //----- Generic information  -----------------------------------------------------------------------
-Int_t   NTracks                 [MAX_JETS] ;
-Float_t Et                      [MAX_JETS] ;
-Float_t Pt                      [MAX_JETS] ;
-Float_t Unc                     [MAX_JETS] ;
-Float_t Eta                     [MAX_JETS] ;
-Float_t Phi                     [MAX_JETS] ;
-Float_t Px                      [MAX_JETS] ; //Uly 2011-04-04
-Float_t Py                      [MAX_JETS] ; //Uly 2011-04-04
-Float_t Pz                      [MAX_JETS] ; //Uly 2011-04-04
-Float_t Energy                  [MAX_JETS] ; //Uly 2011-04-04
-Float_t Mass                    [MAX_JETS] ;
-Float_t Area                    [MAX_JETS] ;
-Int_t   JetIDLOOSE              [MAX_JETS] ; //Add by Chiyi
-Float_t JetCharge               [MAX_JETS] ;
-Int_t   NConstituents           [MAX_JETS] ;
+Int_t   NTracks       [MAX_JETS] ;
+Float_t Et            [MAX_JETS] ;
+Float_t Pt            [MAX_JETS] ;
+Float_t Unc           [MAX_JETS] ;
+Float_t Eta           [MAX_JETS] ;
+Float_t Phi           [MAX_JETS] ;
+Float_t Px            [MAX_JETS] ; //Uly 2011-04-04
+Float_t Py            [MAX_JETS] ; //Uly 2011-04-04
+Float_t Pz            [MAX_JETS] ; //Uly 2011-04-04
+Float_t Energy        [MAX_JETS] ; //Uly 2011-04-04
+Float_t Mass          [MAX_JETS] ;
+Float_t Area          [MAX_JETS] ;
+Int_t   JetIDLOOSE    [MAX_JETS] ; //Add by Chiyi
+Float_t JetCharge     [MAX_JETS] ;
+Int_t   NConstituents [MAX_JETS] ;
 //----- Lepton cleaned variables  ----------------------------------------------
-Float_t PtCleaned               [MAX_JETS] ;
-Float_t EtaCleaned              [MAX_JETS] ;
-Float_t PhiCleaned              [MAX_JETS] ;
-Float_t EnergyCleaned           [MAX_JETS] ;
+Float_t PtUncleaned     [MAX_JETS] ;
+Float_t EtaUncleaned    [MAX_JETS] ;
+Float_t PhiUncleaned    [MAX_JETS] ;
+Float_t EnergyUncleaned [MAX_JETS] ;
 
 //----- QG tagger variables  -----------------------------------------------------------------------
 Float_t QGTagsLikelihood        [MAX_JETS] ;

@@ -11,8 +11,8 @@
 using namespace std;
 
 eventSelector::eventSelector
-( const edm::ParameterSet& iConfig, const EvtInfoBranches& evt, 
-  const LepInfoBranches& lep, const JetInfoBranches& jet, const VertexInfoBranches& vtx ): 
+( const edm::ParameterSet& iConfig, const EvtInfoBranches& evt,
+  const LepInfoBranches& lep, const JetInfoBranches& jet, const VertexInfoBranches& vtx ):
    _event( &evt ),
    _leptons( &lep ),
    _jets( &jet ),
@@ -21,16 +21,16 @@ eventSelector::eventSelector
    _minDRmujet( iConfig.getUntrackedParameter<double>( "MinDRmuonJet", 0.3 ) ),
    _minDRjetel( iConfig.getUntrackedParameter<double>( "MinDRjetElectron", 0.3 ) ),
    _cleanDRjetmu( iConfig.getUntrackedParameter<double>( "CleanDRjetMuon", 0.1 ) ),
-   _muonTriggers( iConfig.getUntrackedParameter< std::vector<std::string> >( "MuonTriggers" ) ),
-   _muTbeginRange( iConfig.getUntrackedParameter< std::vector<int> >( "MuTrigLowerRun" ) ),
-   _electronTriggers( iConfig.getUntrackedParameter<std::vector<std::string> >( "ElectronTriggers" ) ),
-   _elTbeginRange( iConfig.getUntrackedParameter< std::vector<int> >( "ElTrigLowerRun" ) ),
-   _cutLevels( iConfig.getUntrackedParameter< std::vector<std::string> >( "CutLevels" ) ),
+   _muonTriggers( iConfig.getUntrackedParameter<std::vector<std::string>>( "MuonTriggers" ) ),
+   _muTbeginRange( iConfig.getUntrackedParameter<std::vector<int>>( "MuTrigLowerRun" ) ),
+   _electronTriggers( iConfig.getUntrackedParameter<std::vector<std::string>>( "ElectronTriggers" ) ),
+   _elTbeginRange( iConfig.getUntrackedParameter<std::vector<int>>( "ElTrigLowerRun" ) ),
+   _cutLevels( iConfig.getUntrackedParameter<std::vector<std::string>>( "CutLevels" ) ),
    _minNjets( iConfig.getUntrackedParameter<int>( "MinNJets", 4 ) ),
    _checkJetPtOrder( iConfig.getUntrackedParameter<bool>( "CheckJetPtOrder", false ) ),
-   _minJetPts( iConfig.getUntrackedParameter< std::vector<double> >( "MinJetPTs" ) ),
+   _minJetPts( iConfig.getUntrackedParameter<std::vector<double>>( "MinJetPTs" ) ),
    _minMET( iConfig.getUntrackedParameter<double>( "MinMET", 0. ) ),
-   _debug( iConfig.getUntrackedParameter<bool>( "Debug", false ) )   
+   _debug( iConfig.getUntrackedParameter<bool>( "Debug", false ) )
 {
    _oSelector = new objectSelector( _oParameters, *_leptons, *_jets, *_vertices );
 
@@ -80,7 +80,7 @@ bool eventSelector::passes()
    bool passes = false;
    int code = passCode();
    if( code >= ( int )_cutLevels.size() - 1 ) { passes = true; }
-   if( _debug ) 
+   if( _debug )
       cout << "Event passcode=" << code
            << " of " << _cutLevels.size() - 1
            << ". " << ( passes ? "Passes" : "Fails" ) << endl;
