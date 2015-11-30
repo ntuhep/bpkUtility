@@ -18,6 +18,7 @@
 #define MAX_PAIRS          512
 #define MAX_PHOTONS        128
 #define MAX_GENS           128
+#define MAX_LHE            256
 #define MAX_Vertices       256
 #define MAX_BX             128
 #define N_TRIGGER_BOOKINGS 2214

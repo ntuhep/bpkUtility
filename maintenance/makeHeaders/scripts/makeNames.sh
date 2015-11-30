@@ -70,6 +70,8 @@ makeLeafName()
       echo "(name+\".$VNAME[\"+name+\".nTrgBook]/$TYPE_TOKEN\").c_str()";
    elif [[ $VARIABLE_SIZE == "["[1-9]*"]" ]] ; then  ## Special case for fixed size array 
       echo "(name+\".$VNAME$VSIZE/$TYPE_TOKEN\").c_str()";
+   elif [[ $VARIABLE_SIZE == *"MAX_LHE"* ]]; then    ## Special case for LHE variables
+      echo "(name+\".$VNAME[\"+name+\".LHESize]/$TYPE_TOKEN\").c_str()";
    else 
       echo "(name+\".$VNAME[\"+name+\".Size]/$TYPE_TOKEN\").c_str()";
    fi 

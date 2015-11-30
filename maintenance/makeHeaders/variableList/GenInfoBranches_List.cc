@@ -23,4 +23,9 @@ Int_t GrandMo1PdgID  [MAX_GENS] ;
 Int_t GrandMo2PdgID  [MAX_GENS] ;
 Int_t GrandMo1Status [MAX_GENS] ;
 Int_t GrandMo2Status [MAX_GENS] ;
-
+//----- LHE related information  -----------------------------------------------
+Float_t     LHENominalWeight;
+Float_t     LHEOriginalWeight;
+Int_t       LHESize;
+Int_t       LHESystematicId      [MAX_LHE];
+Float_t     LHESystematicWeights [MAX_LHE];
