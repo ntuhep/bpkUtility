@@ -5,6 +5,7 @@ Int_t   NTracks       [MAX_JETS] ;
 Float_t Et            [MAX_JETS] ;
 Float_t Pt            [MAX_JETS] ;
 Float_t Unc           [MAX_JETS] ;
+Float_t JesUnc        [MAX_JETS] ; 
 Float_t Eta           [MAX_JETS] ;
 Float_t Phi           [MAX_JETS] ;
 Float_t Px            [MAX_JETS] ; //Uly 2011-04-04
@@ -81,6 +82,7 @@ Float_t ak8PFJetsCHSFilteredMass [MAX_JETS] ;
 Float_t topJetMass [MAX_JETS];
 Float_t ca8TopMass [MAX_JETS];
 Float_t ca8MinMass [MAX_JETS];
+
 //----- Vector pointer types used for reading  -----------------------------------------------------
 std::vector<Float_t>* SubjetMass                ;
 std::vector<Float_t>* SubjetPt                  ;
