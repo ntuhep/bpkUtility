@@ -89,18 +89,24 @@ std::vector<Float_t>* SubjetPt                  ;
 std::vector<Float_t>* SubjetEt                  ;
 std::vector<Float_t>* SubjetEta                 ;
 std::vector<Float_t>* SubjetPhi                 ;
-std::vector<Float_t>* SubjetCombinedSVBJetTags  ;
-std::vector<Float_t>* SubjetPtUncorr            ;
 std::vector<Float_t>* SubjetArea                ;
+std::vector<Float_t>* SubjetPtUncorr            ;
+std::vector<Float_t>* SubjetCombinedSVBJetTags  ;
+std::vector<Float_t>* SubjetGenPdgId            ;
+std::vector<Float_t>* SubjetGenFlavour          ;
+std::vector<Float_t>* SubjetHadronFlavour       ;
 //----- Vector type used for writing  --------------------------------------------------------------
 std::vector<Float_t> SubjetMass_w               ;
 std::vector<Float_t> SubjetPt_w                 ;
 std::vector<Float_t> SubjetEt_w                 ;
 std::vector<Float_t> SubjetEta_w                ;
 std::vector<Float_t> SubjetPhi_w                ;
-std::vector<Float_t> SubjetCombinedSVBJetTags_w ;
-std::vector<Float_t> SubjetPtUncorr_w           ;
 std::vector<Float_t> SubjetArea_w               ;
+std::vector<Float_t> SubjetPtUncorr_w           ;
+std::vector<Float_t> SubjetCombinedSVBJetTags_w ;
+std::vector<Float_t> SubjetGenPdgId_w           ;
+std::vector<Float_t> SubjetGenFlavour_w         ;
+std::vector<Float_t> SubjetHadronFlavour_w      ;
 
 #ifdef __BPRIMEKIT_H__
    reco::Candidate* CandRef[MAX_JETS]; // backward poInt_ter to the PAT objects
