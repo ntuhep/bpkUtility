@@ -109,5 +109,14 @@ std::vector<Float_t> SubjetGenFlavour_w         ;
 std::vector<Float_t> SubjetHadronFlavour_w      ;
 
 #ifdef __BPRIMEKIT_H__
-   reco::Candidate* CandRef[MAX_JETS]; // backward poInt_ter to the PAT objects
+reco::Candidate* CandRef[MAX_JETS]; // backward pointer to pat:: object
 #endif
+
+
+//----- Legacy variables  ------------------------------------------------------
+Float_t JVAlpha                 [MAX_JETS] ;
+Float_t JVBeta                  [MAX_JETS] ;
+
+
+
+
