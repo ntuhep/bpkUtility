@@ -83,7 +83,7 @@ Float_t topJetMass [MAX_JETS];
 Float_t ca8TopMass [MAX_JETS];
 Float_t ca8MinMass [MAX_JETS];
 
-//----- Vector pointer types used for reading  -----------------------------------------------------
+//----- Vector pointer types used for reading  --------------------------------
 std::vector<Float_t>* SubjetMass                ;
 std::vector<Float_t>* SubjetPt                  ;
 std::vector<Float_t>* SubjetEt                  ;
@@ -95,7 +95,7 @@ std::vector<Float_t>* SubjetCombinedSVBJetTags  ;
 std::vector<Float_t>* SubjetGenPdgId            ;
 std::vector<Float_t>* SubjetGenFlavour          ;
 std::vector<Float_t>* SubjetHadronFlavour       ;
-//----- Vector type used for writing  --------------------------------------------------------------
+//----- Vector type used for writing  -----------------------------------------
 std::vector<Float_t> SubjetMass_w               ;
 std::vector<Float_t> SubjetPt_w                 ;
 std::vector<Float_t> SubjetEt_w                 ;
@@ -108,14 +108,16 @@ std::vector<Float_t> SubjetGenPdgId_w           ;
 std::vector<Float_t> SubjetGenFlavour_w         ;
 std::vector<Float_t> SubjetHadronFlavour_w      ;
 
+//----- Legacy variables  ------------------------------------------------------
+Float_t JVAlpha                 [MAX_JETS] ;
+Float_t JVBeta                  [MAX_JETS] ;
+
+//----- CMSSW Objects  ---------------------------------------------------------
 #ifdef __BPRIMEKIT_H__
 reco::Candidate* CandRef[MAX_JETS]; // backward pointer to pat:: object
 #endif
 
 
-//----- Legacy variables  ------------------------------------------------------
-Float_t JVAlpha                 [MAX_JETS] ;
-Float_t JVBeta                  [MAX_JETS] ;
 
 
 
