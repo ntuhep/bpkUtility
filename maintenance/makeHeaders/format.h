@@ -1235,6 +1235,7 @@ public:
    Bool_t  phoPassTight         [MAX_PHOTONS] ;
    Float_t r9                   [MAX_PHOTONS] ;
    Bool_t  passelectronveto     [MAX_PHOTONS] ;
+   Bool_t  hasPixelSeed         [MAX_PHOTONS] ;
    Float_t  EcalIso             [MAX_PHOTONS] ;
    Float_t  HcalIso             [MAX_PHOTONS] ;
    Float_t  TrackIso            [MAX_PHOTONS] ;
@@ -1242,7 +1243,6 @@ public:
    Float_t GenEta               [MAX_PHOTONS] ;
    Float_t GenPhi               [MAX_PHOTONS] ;
    Int_t   GenPdgID             [MAX_PHOTONS] ;
-
    void RegisterTree( TTree* root , std::string name = "PhotonInfo" ) {
       root->Branch( ( name + ".Size" ).c_str(), &Size, ( name + ".Size/I" ).c_str() );
       root->Branch( ( name + ".Pt" ).c_str(), Pt, ( name + ".Pt[" + name + ".Size]/F" ).c_str() );
@@ -1264,6 +1264,7 @@ public:
       root->Branch( ( name + ".phoPassTight" ).c_str(), phoPassTight, ( name + ".phoPassTight[" + name + ".Size]/O" ).c_str() );
       root->Branch( ( name + ".r9" ).c_str(), r9, ( name + ".r9[" + name + ".Size]/F" ).c_str() );
       root->Branch( ( name + ".passelectronveto" ).c_str(), passelectronveto, ( name + ".passelectronveto[" + name + ".Size]/O" ).c_str() );
+      root->Branch( ( name + ".hasPixelSeed" ).c_str(), hasPixelSeed, ( name + ".hasPixelSeed[" + name + ".Size]/O" ).c_str() );
       root->Branch( ( name + ".EcalIso" ).c_str(), EcalIso, ( name + ".EcalIso[" + name + ".Size]/F" ).c_str() );
       root->Branch( ( name + ".HcalIso" ).c_str(), HcalIso, ( name + ".HcalIso[" + name + ".Size]/F" ).c_str() );
       root->Branch( ( name + ".TrackIso" ).c_str(), TrackIso, ( name + ".TrackIso[" + name + ".Size]/F" ).c_str() );
@@ -1293,6 +1294,7 @@ public:
       root->SetBranchAddress( ( name + ".phoPassTight" ).c_str() , phoPassTight ) ;
       root->SetBranchAddress( ( name + ".r9" ).c_str() , r9 ) ;
       root->SetBranchAddress( ( name + ".passelectronveto" ).c_str() , passelectronveto ) ;
+      root->SetBranchAddress( ( name + ".hasPixelSeed" ).c_str() , hasPixelSeed ) ;
       root->SetBranchAddress( ( name + ".EcalIso" ).c_str() , EcalIso ) ;
       root->SetBranchAddress( ( name + ".HcalIso" ).c_str() , HcalIso ) ;
       root->SetBranchAddress( ( name + ".TrackIso" ).c_str() , TrackIso ) ;
@@ -1343,6 +1345,16 @@ public:
       root->SetBranchAddress( ( name + ".y" ).c_str() , y ) ;
       root->SetBranchAddress( ( name + ".z" ).c_str() , z ) ;
       root->SetBranchAddress( ( name + ".Rho" ).c_str() , Rho ) ;
+   }
+};
+class RunInfoBranches {
+public:
+   Int_t PdfID;
+   void RegisterTree( TTree* root , std::string name = "RunInfo" ) {
+      root->Branch( ( name + ".PdfID" ).c_str(), &PdfID, ( name + ".PdfID/I" ).c_str() );
+   }
+   void Register( TTree* root , std::string name = "RunInfo" ) {
+      root->SetBranchAddress( ( name + ".PdfID" ).c_str() , &PdfID ) ;
    }
 };
 #endif // __BPRIMEKIT_FORMAT_H__
