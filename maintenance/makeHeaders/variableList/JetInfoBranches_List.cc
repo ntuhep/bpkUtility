@@ -5,7 +5,7 @@ Int_t   NTracks       [MAX_JETS] ;
 Float_t Et            [MAX_JETS] ;
 Float_t Pt            [MAX_JETS] ;
 Float_t Unc           [MAX_JETS] ;
-Float_t JesUnc        [MAX_JETS] ; 
+Float_t JesUnc        [MAX_JETS] ;
 Float_t Eta           [MAX_JETS] ;
 Float_t Phi           [MAX_JETS] ;
 Float_t Px            [MAX_JETS] ; //Uly 2011-04-04
@@ -17,6 +17,13 @@ Float_t Area          [MAX_JETS] ;
 Int_t   JetIDLOOSE    [MAX_JETS] ; //Add by Chiyi
 Float_t JetCharge     [MAX_JETS] ;
 Int_t   NConstituents [MAX_JETS] ;
+
+Float_t Pt_MuonCleaned     [MAX_JETS];
+Float_t Eta_MuonCleaned    [MAX_JETS];
+Float_t Phi_MuonCleaned    [MAX_JETS];
+Float_t Energy_MuonCleaned [MAX_JETS];
+
+
 //----- Lepton cleaned variables  ----------------------------------------------
 Float_t PtUncleaned     [MAX_JETS] ;
 Float_t EtaUncleaned    [MAX_JETS] ;
@@ -27,7 +34,7 @@ Float_t EnergyUncleaned [MAX_JETS] ;
 Float_t QGTagsLikelihood        [MAX_JETS] ;
 Float_t QGTagsAxis2             [MAX_JETS] ;
 Float_t QGTagsMult              [MAX_JETS] ;
-Float_t QGTagsPtD               [MAX_JETS] ; 
+Float_t QGTagsPtD               [MAX_JETS] ;
 
 Int_t   NCH                     [MAX_JETS] ;
 Float_t CEF                     [MAX_JETS] ;
@@ -82,6 +89,17 @@ Float_t ak8PFJetsCHSFilteredMass [MAX_JETS] ;
 Float_t topJetMass [MAX_JETS];
 Float_t ca8TopMass [MAX_JETS];
 Float_t ca8MinMass [MAX_JETS];
+Float_t Puppivtx3DSig   [MAX_JETS] ;
+Float_t Puppivtx3DVal   [MAX_JETS] ;
+Float_t PuppivtxMass    [MAX_JETS] ;
+Float_t PuppivtxNtracks [MAX_JETS] ;
+Float_t PuppivtxPosX    [MAX_JETS] ;
+Float_t PuppivtxPosY    [MAX_JETS] ;
+Float_t PuppivtxPosZ    [MAX_JETS] ;
+Float_t PuppivtxPx      [MAX_JETS] ;
+Float_t PuppivtxPy      [MAX_JETS] ;
+Float_t PuppivtxPz      [MAX_JETS] ;
+
 
 //----- Vector pointer types used for reading  --------------------------------
 std::vector<Float_t>* SubjetMass                ;
@@ -116,9 +134,3 @@ Float_t JVBeta                  [MAX_JETS] ;
 #ifdef __BPRIMEKIT_H__
 reco::Candidate* CandRef[MAX_JETS]; // backward pointer to pat:: object
 #endif
-
-
-
-
-
-

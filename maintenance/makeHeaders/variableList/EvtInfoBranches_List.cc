@@ -61,6 +61,20 @@ Float_t PFGenMET                                  ;
 Float_t PFGenMETPhi                               ;
 Float_t PFMETx                                    ; //Uly 2011-04-04
 Float_t PFMETy                                    ; //Uly 2011-04-04
+
+// Puppi Met information
+Float_t PuppiMET                                     ;
+Float_t PuppiMETPhi                                  ;
+Float_t PuppiRawMET                                  ;
+Float_t PuppiRawMETPhi                               ;
+Float_t PuppiSumEt                                   ;
+Float_t PuppiMETSig                                  ;
+Float_t PuppiMETlongitudinal                         ;
+Float_t PuppiMETRealSig                              ;
+Float_t PuppiGenMET                                  ;
+Float_t PuppiGenMETPhi                               ;
+
+
 //----- High Level Trigger information  ------------------------------------------------------------
 Int_t   TrgCount                    ; // No. of fired booking bits
 Int_t   nTrgBook                    ;
@@ -74,4 +88,3 @@ Int_t   HLTName2enum[512]           ;
 Bool_t  HLTbits[N_TRIGGER_BOOKINGS] ;
 Int_t   L1[128]                     ; // L1 trigger bits
 Int_t   TT[64]                      ; // Techical trigger bits
-

@@ -32,7 +32,9 @@ Float_t Ip3dPV                                [MAX_LEPTONS] ;
 Float_t Ip3dPVErr                             [MAX_LEPTONS] ;
 Float_t Ip3dPVSignificance                    [MAX_LEPTONS] ;
 
-//------------------------------------------------------------------------------ 
+Float_t MiniIso                               [MAX_LEPTONS] ;
+
+//------------------------------------------------------------------------------
 //   Muon Information
 //------------------------------------------------------------------------------
 
@@ -51,7 +53,7 @@ Int_t    MuNMuonhits                  [MAX_LEPTONS]  ;
 Int_t    MuDThits                     [MAX_LEPTONS]  ;
 Int_t    MuCSChits                    [MAX_LEPTONS]  ;
 Int_t    MuRPChits                    [MAX_LEPTONS]  ;
-Int_t    MuType                       [MAX_LEPTONS]  ; 
+Int_t    MuType                       [MAX_LEPTONS]  ;
 
 //----- Cosmic Ray filters  ------------------------------------------------------------------------
 Int_t    MuontimenDof                 [MAX_LEPTONS]  ;
@@ -76,9 +78,9 @@ Int_t    MuNPixelLayers               [MAX_LEPTONS]  ;
 Int_t    MuNPixelLayersWMeasurement   [MAX_LEPTONS]  ; //   Uly     2011-04-04
 Int_t    MuNTrackLayersWMeasurement   [MAX_LEPTONS]  ;
 
-//------------------------------------------------------------------------------ 
+//------------------------------------------------------------------------------
 //   Electron Information
-//------------------------------------------------------------------------------  
+//------------------------------------------------------------------------------
 Int_t   ChargeGsf                             [MAX_LEPTONS] ;
 Int_t   ChargeCtf                             [MAX_LEPTONS] ;
 Int_t   ChargeScPix                           [MAX_LEPTONS] ;
@@ -149,9 +151,9 @@ Float_t TrgEta                                [MAX_LEPTONS] ;
 Float_t TrgPhi                                [MAX_LEPTONS] ;
 Int_t TrgID                                   [MAX_LEPTONS] ;
 
-//------------------------------------------------------------------------------ 
+//------------------------------------------------------------------------------
 //   Tau information
-//------------------------------------------------------------------------------  
+//------------------------------------------------------------------------------
 Int_t    isPFTau                                     [MAX_LEPTONS] ;    // YoungKyu 2012-10-16
 Float_t  DiscriminationByDecayModeFinding            [MAX_LEPTONS] ;
 Float_t  DiscriminationByDecayModeFindingNewDMs      [MAX_LEPTONS] ;
@@ -184,4 +186,3 @@ Int_t   GenMCTag                              [MAX_LEPTONS] ;
 #ifdef __BPRIMEKIT_H__
    reco::Candidate* CandRef[MAX_LEPTONS]; // backward poInt_ter to the PAT objects
 #endif
-
