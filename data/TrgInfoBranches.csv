@@ -1,0 +1,7 @@
+Datatype,Varname,Size,Comment
+Int_t,Size,,
+Int_t,TriggerBit,MAX_TRGOBJS,
+Float_t,Pt,MAX_TRGOBJS,
+Float_t,Eta,MAX_TRGOBJS,
+Float_t,Phi,MAX_TRGOBJS,
+Float_t,Energy,MAX_TRGOBJS,

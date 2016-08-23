@@ -1,0 +1,3 @@
+<use name="boost_python" />
+<use name="bpkFrameWork/bpkUtility" />
+<library name="HLTNames" file="HLTNames_Boost.cc"></library>

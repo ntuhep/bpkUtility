@@ -1,0 +1,7 @@
+<use name="root"/>
+<use name="DataFormats/PatCandidates" />
+<use name="DataFormats/FWLite" />
+<use name="bpkFrameWork/bpkUtility"/>
+
+<bin name="obj_probe" file="obj_probe.cc"/>
+<bin name="dump_hlt"  file="dump_hlt.cc"/>
