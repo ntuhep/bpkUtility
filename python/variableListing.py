@@ -116,7 +116,7 @@ def MakeRegisterTreeFunction( reader, default_name ):
         else:
             statementlist += "root->Branch({},{});\n".format( branchname, address )
     return """
-    void RegisterTree( TTree* root, const std::string& name=\"{} \"){{
+    void RegisterTree( TTree* root, const std::string& name=\"{}\"){{
         {}
     }}""".format( default_name, statementlist.strip() )
 
