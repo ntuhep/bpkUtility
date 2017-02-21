@@ -17,13 +17,13 @@
 #include <iostream>
 using namespace std;
 
-int main()
+int main(int argc , char* argv[] )
 {
-   fwlite::Event ev( TFile::Open("./signal.root") );
+   fwlite::Event ev( TFile::Open(argv[1]) );
    fwlite::Handle<edm::TriggerResults>        trigger_handle;
 
    for( ev.toBegin(); !ev.atEnd() ; ++ev ){
-      trigger_handle.getByLabel( ev, "TriggerResults", "", "HLT2" );
+      trigger_handle.getByLabel( ev, "TriggerResults", "", "HLT" );
       const auto& trgnames = ev.triggerNames( *trigger_handle );
       for( unsigned i = 0 ; i < trgnames.size() ; ++i ){
          const string trgname = trgnames.triggerName(i);

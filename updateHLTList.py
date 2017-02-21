@@ -20,6 +20,7 @@ def main():
 
     if not opt.input :
         print "Error! Input edm file is missing!"
+        parser.print_help()
         return 1
 
     names_in_edm = GetHLTNames( opt.input , *opt.tag.split(':'))

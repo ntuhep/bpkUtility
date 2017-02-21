@@ -45,9 +45,9 @@ def MakeTypeToken( row ):
         return 'C'
     elif row['Datatype'] == "ULong64_t" :
         return 'l'
-    elif re.match('std::vector.*\*' , row['Datatype'] ):
+    elif re.match('std::vector\<.*\>\*' , row['Datatype'] ):
         return None
-    elif re.match('std::vector.*' , row['Datatype'] ):
+    elif re.match('std::vector\<.*\>' , row['Datatype'] ):
         return 'V'
     else:
         raise Exception("Unkown variable type in entry " + str(row) )
@@ -55,16 +55,18 @@ def MakeTypeToken( row ):
 def MakeLeaf( row ):
     token = MakeTypeToken( row )
 
-    ## No particular action for vector related variables
-    if not token or token == 'V' :
-        return None
-    if not row['Size'] :
-        return None
-
-    fixed_format = "(name+\".{}[{}]\").c_str()"
+    single_format= "(name+\"{}/{}\").c_str()"
+    fixed_format = "(name+\".{}[{}]/{}\").c_str()"
     leaf_format  = "(name+\".{}[\"+name+\".{}]/{}\").c_str()"
     varname      = row['Varname']
     size         = row['Size']
+
+    ## No particular action for vector related variables
+    if not token or token == 'V' :
+        return None
+
+    if not row['Size'] :
+        return single_format.format( varname, token )
     if size== 'MAX_BX' :
         return leaf_format.format( varname, 'nBX', token )
     elif re.match('HLT.*' , varname ):
@@ -74,7 +76,7 @@ def MakeLeaf( row ):
     elif size == 'MAX_LHE':
         return leaf_format.format( varname, 'LHESize' , token )
     elif size.isdigit():
-        return fixed_format.format( varname, size );
+        return fixed_format.format( varname, size, token );
     else:
         return leaf_format.format( varname, 'Size' , token )
 
@@ -111,9 +113,10 @@ def MakeRegisterTreeFunction( reader, default_name ):
         branchname = BranchName( row )
         address    = Address( row )
         leafname   = MakeLeaf( row )
+        token      = MakeTypeToken(row)
         if leafname:
             statementlist += "root->Branch({},{},{});\n".format( branchname, address, leafname)
-        else:
+        elif token:
             statementlist += "root->Branch({},{});\n".format( branchname, address )
     return """
     void RegisterTree( TTree* root, const std::string& name=\"{}\"){{
