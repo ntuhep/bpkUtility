@@ -6,8 +6,8 @@
  #  Author      : Yi-Mu "Enoch" Chen [ ensc@hep1.phys.ntu.edu.tw ]
  #
 #*******************************************************************************
-import csv, re
-
+import csv
+import re
 
 def ListFromFile( inputfile ):
     ans=[]
@@ -79,8 +79,6 @@ def MakeLeaf( row ):
         return fixed_format.format( varname, size, token );
     else:
         return leaf_format.format( varname, 'Size' , token )
-
-
 
 def MakeVariablePart( reader ):
     ans = ''

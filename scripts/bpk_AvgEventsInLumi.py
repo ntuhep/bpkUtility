@@ -1,7 +1,7 @@
 #!/bin/env python
 #*******************************************************************************
  #
- #  Filename    : getAvgEventsInLumi.py
+ #  Filename    : bpk_GetAvgEventsInLumi.py
  #  Description : Return the average number of events in lumi sections for a
  #                EDM file
  #  Author      : Yi-Mu "Enoch" Chen [ ensc@hep1.phys.ntu.edu.tw ]
@@ -14,8 +14,7 @@ from DataFormats.FWLite import Events, Lumis, Runs
 
 def main( argv ):
     parser = argparse.ArgumentParser()
-    parser.add_argument('inputfilelist', metavar='N', type=str, nargs='+',
-                    help='List of input files to use')
+    parser.add_argument('inputfilelist', metavar='N', type=str, nargs='+', help='List of input files to use')
     args = parser.parse_args()
 
     numofevts = 0
@@ -36,4 +35,4 @@ def main( argv ):
 
 
 if __name__ == "__main__":
-    main( 'hello' )
+    main()

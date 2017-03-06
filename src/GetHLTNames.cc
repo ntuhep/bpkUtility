@@ -5,10 +5,10 @@
 *  Author      : Yi-Mu "Enoch" Chen [ ensc@hep1.phys.ntu.edu.tw ]
 *
 *******************************************************************************/
-#include "bpkFrameWork/bprimeKit/interface/Types.h"
-
+#include "DataFormats/Common/interface/TriggerResults.h"
 #include "DataFormats/FWLite/interface/Event.h"
 #include "DataFormats/FWLite/interface/Handle.h"
+#include "FWCore/Common/interface/TriggerNames.h"
 
 #include "TFile.h"
 
