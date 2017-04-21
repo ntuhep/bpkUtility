@@ -12,7 +12,7 @@ import argparse
 import sys
 from DataFormats.FWLite import Events, Lumis, Runs
 
-def main( argv ):
+def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('inputfilelist', metavar='N', type=str, nargs='+', help='List of input files to use')
     args = parser.parse_args()
@@ -28,7 +28,7 @@ def main( argv ):
         numoflumis = numoflumis + lm._lumi.size()
         numofruns  = numofruns  + rn._run.size()
 
-        print "{0} | {1} | {2}".format( ev.size(), lm_lumi.size(), rn._run.size() )
+        print "{0} | {1} | {2}".format( ev.size(), lm._lumi.size(), rn._run.size() )
 
     print "{0} | {1} | {2}".format( numofevts, numoflumis, numofruns )
 

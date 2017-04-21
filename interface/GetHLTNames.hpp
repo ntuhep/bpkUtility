@@ -109,7 +109,7 @@ struct map_item {
 
 
 #define MAKE_MAP_WRAPPER( CPP_NAME , PYTHON_NAME )                                           \
-   boost::python::class_<Layer>("Layer")                                                     \
+   boost::python::class_<CPP_NAME>( #PYTHON_NAME )                                                     \
       .def("__len__", &Layer::size)                                                          \
       .def("clear", &Layer::clear)                                                           \
       .def("__getitem__", &map_item<Layer>::get                                              \
