@@ -2,40 +2,47 @@
 '''
 This is the module for options setting.
 This module allows you use options:
-    -h, --help: print the usage
-    -i, --input: add a input file
-    -o, --output: modify the output fileName
-                  if this is not set, use the default name 'result.txt'
+    --input     add a input file
+    --output    modify the output fileName
+    --force     if the file exists, force the program to overwrite
+                if this is not set, use the default name 'result.txt'
 '''
 
 
 import sys, getopt
 def usage():
-    print "usage:%s [i|o|h|f] [--help|--output|--input|--force] args..."
+    print "usage: [o|a|f] [--output|--input|--force] args..."
     print "especially, you need to input a file"
 
 def basicIOoptions():
-    inputFile=''
-    outputFile='result.txt'
-    forceTag=False
+    import argparse
+    option=argparse.ArgumentParser()
 
-    opts,args = getopt.getopt(sys.argv[1:], "i:o:hf", ['help', 'output=', 'input=', 'force'])
-    for opt, arg in opts:
-        if opt in ("-h", "--help"):
-            usage()
-            sys.exit(1)
-        elif opt in ("-i", "--input"):
-            inputFile=arg
-        elif opt in ("-o", "--output"):
-            outputFile=args
-        elif opt in ('-f', '--force'):
-            forceTag=True
+    option.add_argument('--input', '-i',
+                        default='',
+                        type=str,
+                        help='add a input file')
+    option.add_argument('--output', '-o',
+                        default='result.txt',
+                        type=str,
+                        help='add a input file')
+    option.add_argument('--force', '-f',
+                        default=False,
+                        action='store_true',
+                        help='if the file exists, the tag to overwrite the file')
+    options=option.parse_args()
+
+    inputFile=options.input
+    outputFile=options.output
+    forceTag=options.force
+
     if inputFile == '':
         usage()
-        sys.exit(1)
+        exit(1)
 
     print 'import file is: '+inputFile
     print 'created file is: '+outputFile
+    print 'force to overwrite file: '+str(forceTag)
 
     return { 'in':inputFile, 'out':outputFile, 'force':forceTag }
 

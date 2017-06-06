@@ -1,4 +1,17 @@
 #!/usr/bin/env python2
+'''
+this code is to compare two dictionaries
+the dictionary should have the format:
+    dic={ 'aaaBranches': { 'instance': 'aaa', 'variable': ['var1', 'var2', ...] },
+          'bbbBranches': { 'instance': 'bbb', 'variable': ['var1', 'var2', ...] }    }
+compare about the variables within the same Branches.
+and the output is the different list
+the output owns the format:
+    out={ 'aaaBranches': { 'old': ['var1', 'var2'], 'new': ['var3', 'var4'] },
+          'bbbBranches': { 'old': ['var1', 'var2'], 'new': ['var3', 'var4'] }   }
+
+'''
+
 
 def printByTag( LIST, TAG ):
     for l, t in zip( LIST, TAG ):
