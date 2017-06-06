@@ -9,10 +9,6 @@ This module allows you use options:
 '''
 
 
-import sys, getopt
-def usage():
-    print "usage: [o|a|f] [--output|--input|--force] args..."
-    print "especially, you need to input a file"
 
 def basicIOoptions():
     import argparse
@@ -37,12 +33,13 @@ def basicIOoptions():
     forceTag=options.force
 
     if inputFile == '':
-        usage()
+        options.print_help()
         exit(1)
 
     print 'import file is: '+inputFile
     print 'created file is: '+outputFile
     print 'force to overwrite file: '+str(forceTag)
+    print ''
 
     return { 'in':inputFile, 'out':outputFile, 'force':forceTag }
 
