@@ -15,7 +15,7 @@ from bpkFrameWork.bpkUtility.pluginHLTNames import GetHLTNames
 def main():
     parser = argparse.ArgumentParser("Options for updating a HLTList file")
     parser.add_argument('-c', '--checkfile', help='Which HLT list file to check for updates', type=str, default='./data/HLTList.asc')
-    parser.add_argument('-i', '--input', help='Input EDM file to check for HLT updates', type=str, default=None)
+    parser.add_argument('-i', '--input', help='Input EDM file to check for HLT updates', type=str, nargs='+',default=None)
     parser.add_argument('-t', '--tag', help='edm::InputTag of trigger collection', type=str, default='TriggerResults::HLT')
 
     opt = parser.parse_args()
@@ -25,7 +25,13 @@ def main():
         parser.print_help()
         return 1
 
-    names_in_edm = GetHLTNames(opt.input, *opt.tag.split(':'))
+    names_in_edm = []
+    for inputfile in opt.input:
+        names_in_edm.extend( GetHLTNames(inputfile, *opt.tag.split(':')) )
+        names_in_edm = set(names_in_edm)
+        names_in_edm = list(names_in_edm)
+
+    names_in_edm.sort()
     names_in_file = getHLTfromlistfile(opt.checkfile)
 
     print len(names_in_file)
