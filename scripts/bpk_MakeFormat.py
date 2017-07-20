@@ -87,7 +87,7 @@ def main():
         format_content.format( content )
     )
     output.close()
-    os.system('astyle --suffix=none format.h')
+    os.system('uncrustify -c uncrustify.cfg --replace format.h')
 
 
 if __name__ == "__main__":
