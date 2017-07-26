@@ -35,7 +35,7 @@ def main():
     parser = argparse.ArgumentParser(description="Options for generating TriggerBooking file")
     parser.add_argument( '-i', '--input',  help='input file to read', type=str, default=defaultinput )
     parser.add_argument( '-o', '--output', help='output file', type=str, default='./TriggerBooking.h')
-    parser.add_argument( '-f', '--force', action='store_true', help='fource override of output file if already exists' )
+    parser.add_argument( '-f', '--force', action='store_true', help='force override of output file if already exists' )
 
     opt = parser.parse_args()
 

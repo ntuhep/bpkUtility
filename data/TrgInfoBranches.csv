@@ -6,3 +6,15 @@ Float_t,Pt,MAX_TRGOBJS,
 Float_t,Eta,MAX_TRGOBJS,
 Float_t,Phi,MAX_TRGOBJS,
 Float_t,Energy,MAX_TRGOBJS,
+
+Int_t,TrgCount,,No. of fired booking bits
+Int_t,nTrgBook,,
+Char_t,TrgBook,N_TRIGGER_BOOKINGS,
+Int_t,nHLT,,
+Float_t,HighPurityFraction,,
+Int_t,NofTracks,,
+Int_t,HLTPrescaleFactor,512,
+Int_t,HLTName2enum,512,
+Bool_t,HLTbits,N_TRIGGER_BOOKINGS,
+Int_t,L1,128,L1 trigger bits
+Int_t,TT,64,Techical trigger bits

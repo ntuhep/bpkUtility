@@ -12,7 +12,6 @@ the output owns the format:
 
 '''
 
-
 def printByTag( LIST, TAG ):
     for l, t in zip( LIST, TAG ):
         if t is False:
@@ -64,8 +63,3 @@ def analyze2Dictionary(oldNameDict, newNameDict):
         diffName.update( {bName:nameList} )
 
     return diffName
-    #return diffNum
-
-
-if __name__ == "__main__":
-    print "HI"

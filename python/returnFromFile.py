@@ -20,32 +20,27 @@ addDictFromCSV:
                   'bbbBranches': { 'instance': 'bbb', 'variable': ['var1', 'var2', ...] }    }
 '''
 
+import os
+import re
+import csv
 
-def listDIR(path, pattern=None):
-    import os, re
+def listDIR(path, pattern='.+Branches.csv'):
     dirName = os.listdir(path)
-    pat='.+Branches.csv'
-    if pattern is not None:
-        pat=pattern
     nameList = []
     for dName in dirName:
-        match=re.search(pat, dName)
+        match=re.search(pattern, dName)
         if match is not None:
             nameList.append( match.group().replace('.csv', '' ) )
     return nameList
 
-def dictInTXT(inFile):
-    with open(inFile, 'r') as file:
-        fileContent=''
-        for line in file:
-            fileContent+=line
-        return eval(fileContent)
+def dictInTXT(inputfile):
+    with open(inputfile, 'r') as txtfile:
+        return eval(txtfile.read())
 
 def addDictFromCSV(branchName, csvFile):
-    import csv
     outDict={}
-    with open(csvFile, 'r') as file:
-        reader = csv.DictReader(file, delimiter=',')
+    with open(csvFile, 'r') as csvfile:
+        reader = csv.DictReader(csvfile, delimiter=',')
         name=[]
         for row in reader:
             name.append( row['Varname'] )
@@ -67,4 +62,3 @@ if __name__ == "__main__":
     dicts=addDictFromCSV( 'VertexInfoBranches', '../data/VertexInfoBranches.csv' )
     for key, val in dicts['VertexInfoBranches'].iteritems():
         print key + ': ' + str(val)
-

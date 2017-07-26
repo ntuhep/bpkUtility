@@ -17,6 +17,8 @@ log*
 
 # Specific file exclusion
 # [relative/path/to/file]
+python/__init__.py
+
 
 # Specific file inclusion
 # ![relative/path/to/file]

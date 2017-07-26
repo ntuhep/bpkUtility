@@ -1,6 +1,6 @@
 Datatype,Varname,Size,Comment
 Int_t,Size,,
-Float_t,Weight,,
+
 Float_t,Pt,MAX_GENS,
 Float_t,Eta,MAX_GENS,
 Float_t,Phi,MAX_GENS,
@@ -24,6 +24,23 @@ Int_t,GrandMo1PdgID,MAX_GENS,
 Int_t,GrandMo2PdgID,MAX_GENS,
 Int_t,GrandMo1Status,MAX_GENS,
 Int_t,GrandMo2Status,MAX_GENS,
+
+Bool_t,McIsTZTZ,,
+Bool_t,McIsTHTH,,
+Bool_t,McIsTZTH,,
+Bool_t,McIsTZBW,,
+Bool_t,McIsTHBW,,
+Bool_t,McIsBWBW,,
+
+Float_t,Weight,,
+Float_t,ptHat,,
+Int_t,PDFid1,,
+Int_t,PDFid2,,
+Float_t,PDFx1,,
+Float_t,PDFx2,,
+Float_t,PDFscale,,
+Float_t,PDFv1,,
+Float_t,PDFv2,,
 
 Float_t,LHENominalWeight,,
 Float_t,LHEOriginalWeight,,
