@@ -12,11 +12,12 @@ using namespace std;
 
 eventSelector::eventSelector
 ( const edm::ParameterSet& iConfig, const EvtInfoBranches& evt,
-  const LepInfoBranches& lep, const JetInfoBranches& jet, const VertexInfoBranches& vtx ):
+  const LepInfoBranches& lep, const JetInfoBranches& jet, const VertexInfoBranches& vtx, const TrgInfoBranches& trg ):
    _event( &evt ),
    _leptons( &lep ),
    _jets( &jet ),
    _vertices( &vtx ),
+   _trigger( &trg ), 
    _oParameters( iConfig.getParameter<edm::ParameterSet>( "ObjectParameters" ) ),
    _minDRmujet( iConfig.getUntrackedParameter<double>( "MinDRmuonJet", 0.3 ) ),
    _minDRjetel( iConfig.getUntrackedParameter<double>( "MinDRjetElectron", 0.3 ) ),
@@ -156,7 +157,7 @@ bool eventSelector::passesTrigger()
             if( pass ) { break; }
             string s = TriggerBooking[j];
             if( string::npos != s.find( trigs[i] ) ) { //found trigger
-               if( _event->TrgBook[j] == 1 ) {
+               if( _trigger->TrgBook[j] == 1 ) {
                   pass = true;
                   if( _debug ) { cout << "Passed " << TriggerBooking[j] << endl; }
                }

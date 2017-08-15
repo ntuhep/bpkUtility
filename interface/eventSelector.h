@@ -17,7 +17,7 @@ class eventSelector {
 public:
 
    eventSelector( const edm::ParameterSet&,
-                  const EvtInfoBranches& evt, const LepInfoBranches& lep, const JetInfoBranches& jet, const VertexInfoBranches& vtx );
+                  const EvtInfoBranches& evt, const LepInfoBranches& lep, const JetInfoBranches& jet, const VertexInfoBranches& vtx, const TrgInfoBranches& trg );
 
    void setChannel( int ch );
    bool passes();
@@ -52,6 +52,7 @@ private:
    const LepInfoBranches* _leptons;
    const JetInfoBranches* _jets;
    const VertexInfoBranches* _vertices;
+   const TrgInfoBranches* _trigger;
 
    edm::ParameterSet _oParameters;
    objectSelector* _oSelector;
