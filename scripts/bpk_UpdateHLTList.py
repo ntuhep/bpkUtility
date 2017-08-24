@@ -20,8 +20,8 @@ bpkutil_path = os.environ['CMSSW_BASE'] + '/src/bpkFrameWork/bpkUtility/'
 formathelp_str = """
     format string must be in the format of a python dictionary with a string as the key value and a list of version integers as the dictionary value.
     Valid examples:
-     - {{{ 'v1.0.1':[1,3,4], 'v1.1.1':[6,9,8], }}}
-     - {{{ 'v2.0.1':range(1,9) }}}
+     - { 'v1.0.1':[1,3,4], 'v1.1.1':[6,9,8], }
+     - { 'v2.0.1':range(1,9) }
 """
 
 def main(args):
