@@ -10,6 +10,9 @@ from DataFormats.FWLite import Events, Handle
 
 def getHLTfromlistfile( asciifile ):
     content = []
+
+    open(asciifile, "a")
+
     with open(asciifile) as listfile:
         content = listfile.readlines()
         content = [ x.strip() for x in content ]
